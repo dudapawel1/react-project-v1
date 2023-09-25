@@ -20,8 +20,10 @@ const AsideMenu = () => {
 
     return ( 
         <section className={style()}>
-            <UserMenu isUserLogged={Boolean(user)}/> 
-            {adminMenuComponent}
+            <div className={style('nav-wrapper')}>
+                <UserMenu isUserLogged={Boolean(user)}/> 
+                {adminMenuComponent}
+            </div>           
         </section>
      );
 }
