@@ -11,15 +11,15 @@ const style = bemCssModules(UserCoursesStyles);
 const UserCourses = () => {
     const { user, courses } = useContext(StoreContext);
 
-    const byedCourses = courses
+    const buydCourses = courses
         .filter(course => user.courses.includes(course.id))
-        .map((course => <Course key={course.id} {...course}/>));
+        .map(course => <Course isUserContext={true} key={course.id} {...course}/>);
 
     return ( 
         <section className={style()}>
             <h2 className={style('title')}>Twoje wykupione kursy</h2>
             <ul className={style('list')}>
-                {byedCourses}
+                {buydCourses}
             </ul>
         </section>
      );
